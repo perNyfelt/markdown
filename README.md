@@ -1,6 +1,14 @@
 Markdown rendering for R
 =============================================================================
 
+This is a fork that adopts the markdown package to Renjin by replacing the C code 
+(which the gcc bridge cannot fully make sense of) with Java.
+
+Markdown is the only package that knitr depends on which does not work in Renjin
+so even though this package is in maintenance mode, it is needed to get knitr to work.
+
+Below is the original readme content:
+
 [![Build Status](https://travis-ci.org/rstudio/markdown.svg)](https://travis-ci.org/rstudio/markdown)
 [![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/markdown)](https://cran.r-project.org/package=markdown)
 
