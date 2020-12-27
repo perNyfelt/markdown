@@ -7,7 +7,7 @@
 
   <groupId>org.renjin.cran</groupId>
   <artifactId>markdown</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1.2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <!-- general information about your package -->
@@ -104,6 +104,13 @@
         <version>${renjin.version}</version>
         <executions>
           <execution>
+            <id>gnur-compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>gnur-compile</goal>
+            </goals>
+          </execution>
+          <execution>
             <id>build</id>
             <goals>
               <goal>namespace-compile</goal>
@@ -139,7 +146,8 @@
         <version>1.3.4</version>
         <configuration>
           <testFailureIgnore>false</testFailureIgnore>
-          <runSourceScriptsBeforeTests>true</runSourceScriptsBeforeTests>
+          <runSourceScriptsBeforeTests>false</runSourceScriptsBeforeTests>
+          <testSourceDirectory>${basedir}/tests/R/</testSourceDirectory>
         </configuration>
         <executions>
           <execution>
